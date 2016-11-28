@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+#import "Hotel+CoreDataClass.h"
+#import "Room+CoreDataClass.h"
+
 @interface AppDelegate ()
 
 @property(strong, nonatomic) UINavigationController *navigationController;
@@ -43,32 +46,66 @@
 }
 
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-}
-
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+-(void)bootStrapApp {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+    
+    NSError *error;
+    
+    NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request
+                                                                           error:&error]; //wrapper around context, persistent store/coordinator
+    
+    if (error) {
+        NSLog(@"Error getting count of hotels from Core Data");
+        return;
+    }
+    
+    if (count == 0) {
+        NSDictionary *hotels = [[NSDictionary alloc]init];
+        NSDictionary *rooms = [[NSDictionary alloc]init];
+        //start to parse through json
+        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
+        
+        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+        
+        NSError *jsonError;
+        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:NSJSONReadingMutableContainers
+                                                                     error:&jsonError];
+        if (jsonError) {
+            NSLog(@"Error serializing JSON");
+            return;
+        }
+        hotels = rootObject[@"Hotels"]; //array of dicts from json
+        
+        for (NSDictionary *hotel in hotels) {
+            Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel"
+                                                            inManagedObjectContext:self.persistentContainer.viewContext];
+            
+            newHotel.hotelName = hotel[@"name"];
+            newHotel.location = hotel[@"location"];
+            newHotel.stars = (NSInteger)hotel[@"stars"];
+            
+            rooms = hotel[@"rooms"];
+            
+            for (NSDictionary *room in rooms) {
+                Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room"
+                                                              inManagedObjectContext:self.persistentContainer.viewContext];
+                newRoom.roomNumber = (NSInteger)room[@"number"];
+                newRoom.beds = (NSInteger)room[@"beds"];
+                newRoom.rate = (NSDecimalNumber *)room[@"rate"];
+                
+                newRoom.hotel = newHotel;
+            }
+        }
+        NSError *saveError;
+        BOOL isSaved = [self.persistentContainer.viewContext save:&saveError];
+        
+        if (isSaved) {
+            NSLog(@"Saved successfully to Core Data!");
+        } else {
+            NSLog(@"Save Unsuccessful - Core Data Save Error: %@", saveError.localizedDescription);
+        }
+    }
 }
 
 
