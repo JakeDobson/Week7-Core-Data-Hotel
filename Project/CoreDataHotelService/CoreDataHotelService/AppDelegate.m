@@ -22,66 +22,59 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [self setupRootViewController];
     
-    [self bootStrapApp];
+    [self bootstrapApp];
     
     return YES;
 }
 
-//setup rootViewController
-
--(void)setupRootViewController {
-    //make window size of screen
-    self.window = [[UIWindow alloc]initWithFrame: [[UIScreen mainScreen]bounds]];
+-(void)setupRootViewController{
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
-    //setup view controller
     self.viewController = [[ViewController alloc]init];
-    //setup nav controller
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
     
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
+    
 }
 
 
--(void)bootStrapApp {
+-(void)bootstrapApp{
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
     
     NSError *error;
+    NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request error:&error];
     
-    NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request
-                                                                           error:&error]; //wrapper around context, persistent store/coordinator
-    
-    if (error) {
-        NSLog(@"Error getting count of hotels from Core Data");
+    if(error){
+        NSLog(@"Error Getting count of Hotels from Core Data.");
         return;
     }
     
-    if (count == 0) {
+    if(count == 0){
         NSDictionary *hotels = [[NSDictionary alloc]init];
         NSDictionary *rooms = [[NSDictionary alloc]init];
-        //start to parse through json
-        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
         
+        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
         NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
         
         NSError *jsonError;
-        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                                   options:NSJSONReadingMutableContainers
-                                                                     error:&jsonError];
-        if (jsonError) {
-            NSLog(@"Error serializing JSON");
+        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
+        
+        if(jsonError){
+            NSLog(@"Error Serializing JSON");
             return;
         }
-        hotels = rootObject[@"Hotels"]; //array of dicts from json
         
-        for (NSDictionary *hotel in hotels) {
-            Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel"
-                                                            inManagedObjectContext:self.persistentContainer.viewContext];
+        hotels = rootObject[@"Hotels"];
+        
+        for(NSDictionary *hotel in hotels){
+            
+            Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.persistentContainer.viewContext];
             
             newHotel.hotelName = hotel[@"name"];
             newHotel.location = hotel[@"location"];
@@ -90,8 +83,8 @@
             rooms = hotel[@"rooms"];
             
             for (NSDictionary *room in rooms) {
-                Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room"
-                                                              inManagedObjectContext:self.persistentContainer.viewContext];
+                Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.persistentContainer.viewContext];
+                
                 newRoom.roomNumber = (NSInteger)room[@"number"];
                 newRoom.beds = (NSInteger)room[@"beds"];
                 newRoom.rate = (NSDecimalNumber *)room[@"rate"];
@@ -99,23 +92,23 @@
                 newRoom.hotel = newHotel;
             }
         }
+        
         NSError *saveError;
         BOOL isSaved = [self.persistentContainer.viewContext save:&saveError];
         
-        if (isSaved) {
-            NSLog(@"Saved successfully to Core Data!");
+        if(isSaved){
+            NSLog(@"Saved Successfully To Core Data!");
         } else {
-            NSLog(@"Save Unsuccessful - Core Data Save Error: %@", saveError.localizedDescription);
+            NSLog(@"Save Unsuccesssful - SAVE ERROR: %@", saveError.localizedDescription);
         }
     }
 }
-
 
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
 
-- (NSPersistentContainer *)persistentContainer {
+-(NSPersistentContainer *)persistentContainer {
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
@@ -145,7 +138,7 @@
 
 #pragma mark - Core Data Saving support
 
-- (void)saveContext {
+-(void)saveContext {
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {

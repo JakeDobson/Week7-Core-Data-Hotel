@@ -1,47 +1,51 @@
 //
-//  HotelsVC.m
+//  RoomsVC.m
 //  CoreDataHotelService
 //
-//  Created by Jacob Dobson on 11/28/16.
+//  Created by Jacob Dobson on 11/29/16.
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
-#import "HotelsVC.h"
 #import "RoomsVC.h"
-#import "AutoLayout.h"
-#import "AppDelegate.h"
-#import "Hotel+CoreDataClass.h"
 
-@interface HotelsVC () <UITableViewDelegate, UITableViewDataSource>
+#import "AutoLayout.h"
+
+#import "AppDelegate.h"
+
+#import "Hotel+CoreDataClass.h"
+#import "Room+CoreDataClass.h"
+
+
+@interface RoomsVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property(strong, nonatomic)NSArray *dataSource;
 @property(strong, nonatomic)UITableView *tableView;
 
 @end
 
-@implementation HotelsVC
+@implementation RoomsVC
 
--(void)loadView {
-    [super loadView];
-    
-    self.tableView = [[UITableView alloc]init];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.view addSubview:self.tableView];
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"cell"];
-    
-    [AutoLayout activateFullViewConstraintsUsingVFLFor:self.tableView];
-}
+//-(void)loadView {
+//    [super loadView];
+//    
+//    self.tableView = [[UITableView alloc]init];
+//    
+//    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
+//    
+//    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+//    
+//    [self.view addSubview:self.tableView];
+//    [self.tableView registerClass:[UITableViewCell class]
+//           forCellReuseIdentifier:@"cell"];
+//    
+//    [AutoLayout activateFullViewConstraintsUsingVFLFor:self.tableView];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setTitle:@"Hotels"];
+//    [self setTitle:@"Rooms"];
 }
 
 -(NSArray *)dataSource {
@@ -50,7 +54,7 @@
         
         NSManagedObjectContext *context = delegate.persistentContainer.viewContext;
         
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Rooms"];
         
         NSError *fetchError;
         
@@ -64,6 +68,8 @@
     return _dataSource;
 }
 
+
+//MARK: UITableView Required Methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -80,10 +86,5 @@
     return self.dataSource.count;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //create instance of roomsVC
-    RoomsVC *roomsVC = [[RoomsVC alloc]init];
-    //push to roomsVC
-    [self.navigationController pushViewController:roomsVC animated:YES];
-}
+
 @end
