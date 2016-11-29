@@ -11,6 +11,7 @@
 #import "AutoLayout.h"
 #import "AppDelegate.h"
 #import "Hotel+CoreDataClass.h"
+#import "Room+CoreDataClass.h"
 
 @interface HotelsVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -83,6 +84,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //create instance of roomsVC
     RoomsVC *roomsVC = [[RoomsVC alloc]init];
+    Hotel *hotelSelected = self.dataSource[indexPath.row];
+    roomsVC.hotel = hotelSelected;
     //push to roomsVC
     [self.navigationController pushViewController:roomsVC animated:YES];
 }

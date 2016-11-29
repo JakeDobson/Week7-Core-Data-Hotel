@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Hotel+CoreDataClass.h"
 
 @interface RoomsVC : UIViewController
+
+@property(strong, nonatomic)Hotel * hotel;
 
 @end
