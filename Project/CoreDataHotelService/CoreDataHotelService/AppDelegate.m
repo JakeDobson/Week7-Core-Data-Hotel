@@ -26,6 +26,8 @@
     
     [self setupRootViewController];
     
+    [self bootStrapApp];
+    
     return YES;
 }
 

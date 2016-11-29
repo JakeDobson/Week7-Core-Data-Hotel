@@ -26,24 +26,25 @@
 }
 
 +(NSLayoutConstraint *)createGenericConstraintFrom:(UIView *)view toView:(UIView *)superView withAttribute:(NSLayoutAttribute)attribute {
+    
     return [AutoLayout createGenericConstraintFrom:view
                                             toView:superView
-                                    withAttribute:attribute
+                                     withAttribute:attribute
                                      andMultiplier:1.0];
 }
 
 +(NSArray *)activateFullViewConstraintsUsingVFLFor:(UIView *)view {
     NSArray *constraints = [[NSArray alloc] init];
     
-    NSDictionary *viewDict = @{@"anyView": view};
+    NSDictionary *viewDict = @{@"view": view};
     
     // VFL //
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[anyView]|"
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:viewDict];
     //only difference here is horizontal and vertical (H: , V:)
-    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[anyView]|"
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
                                                                            options:0
                                                                            metrics:nil
                                                                              views:viewDict];
@@ -56,11 +57,33 @@
     return constraints;
 }
 
-// only used if not using VFL
-//+(NSArray *)activateFullViewConstraintsFrom:(UIView *)view toView:(UIView *)superView {
-//    
-//    
-//}
++(NSArray *)activateFullViewConstraintsFrom:(UIView *)view toView:(UIView *)superView {
+    
+    NSMutableArray *constraints = [[NSMutableArray alloc]init];
+    
+    NSLayoutConstraint *leadingConstraint = [AutoLayout createGenericConstraintFrom:view
+                                                                             toView:superView
+                                                                      withAttribute:NSLayoutAttributeLeading];
+    
+    NSLayoutConstraint *trailingConstraint = [AutoLayout createGenericConstraintFrom:view
+                                                                              toView:superView
+                                                                       withAttribute:NSLayoutAttributeTrailing];
+    
+    NSLayoutConstraint *topConstraint = [AutoLayout createGenericConstraintFrom:view
+                                                                         toView:superView
+                                                                  withAttribute:NSLayoutAttributeTop];
+    
+    NSLayoutConstraint *bottomConstraint = [AutoLayout createGenericConstraintFrom:view
+                                                                            toView:superView
+                                                                     withAttribute:NSLayoutAttributeBottom];
+    
+    [constraints addObject:leadingConstraint];
+    [constraints addObject:trailingConstraint];
+    [constraints addObject:topConstraint];
+    [constraints addObject:bottomConstraint];
+    
+    return constraints.copy;
+}
 
 +(NSLayoutConstraint *)createLeadingConstraintFrom:(UIView *)view toView:(UIView *)superView { //leading constraint
     return [AutoLayout createGenericConstraintFrom:view

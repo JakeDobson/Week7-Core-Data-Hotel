@@ -10,8 +10,5 @@
 
 
 @interface HotelsVC : UIViewController
-//
-//@property(strong, nonatomic)NSArray *dataSource;
-//@property(strong, nonatomic)UITableView *tableView;
 
 @end
