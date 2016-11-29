@@ -36,7 +36,7 @@
     
     CGFloat navigationBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
     
-    CGFloat buttonHeigth = (self.view.frame.size.height - navigationBarHeight) / 3;
+    CGFloat buttonHeight = (self.view.frame.size.height - navigationBarHeight) / 3;
     
     UIButton *browseButton = [self createButtonWithTitle:@"Browse" andBackgroundColor:[UIColor colorWithRed:1.0
                                                                                                       green:1.0
@@ -82,7 +82,8 @@
                                                                         relatedBy:NSLayoutRelationEqual
                                                                            toItem:nil
                                                                         attribute:NSLayoutRelationEqual
-                                                                       multiplier:1.0 constant:buttonHeigth];
+                                                                       multiplier:1.0
+                                                                         constant:buttonHeight];
     
     
     heightConstraint.active = YES;
