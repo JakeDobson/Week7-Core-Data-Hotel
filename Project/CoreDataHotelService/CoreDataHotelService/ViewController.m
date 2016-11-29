@@ -6,11 +6,10 @@
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
-#import "AutoLayout.h"
-
 #import "ViewController.h"
+#import "DatePickerVC.h"
 #import "HotelsVC.h"
-
+#import "AutoLayout.h"
 #import "Hotel+CoreDataClass.h"
 
 @interface ViewController ()
@@ -19,7 +18,7 @@
 
 @implementation ViewController
 
--(void)loadView{
+-(void)loadView {
     [super loadView];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
@@ -32,7 +31,7 @@
     return YES;
 }
 
--(void)setupCustomLayout{
+-(void)setupCustomLayout {
     
     CGFloat navigationBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
     
@@ -92,16 +91,24 @@
     [AutoLayout createEqualHeightConstraintFrom:browseButton toView:bookButton];
     [AutoLayout createEqualHeightConstraintFrom:lookupButton toView:bookButton];
     
-    
+    //control event targets for pushing vc's
     [browseButton addTarget:self action:@selector(browseButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    [bookButton addTarget:self action:@selector(bookButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
--(void)browseButtonSelected:(UIButton *)sender{
+-(void)browseButtonSelected:(UIButton *)sender {
     
     HotelsVC *hotelsVC = [[HotelsVC alloc]init];
     
     [self.navigationController pushViewController:hotelsVC animated:YES];
+}
+
+-(void)bookButtonSelected:(UIButton *)sender {
+    
+    DatePickerVC *datePickerVC = [[DatePickerVC alloc]init];
+    
+    [self.navigationController pushViewController:datePickerVC animated:YES];
 }
 
 
@@ -123,7 +130,7 @@
 }
 
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
 }
 

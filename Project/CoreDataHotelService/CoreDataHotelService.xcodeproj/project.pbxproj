@@ -17,6 +17,9 @@
 		7C1C4C0E1DEC9D8900C2D66C /* CoreDataHotelServiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C4C0D1DEC9D8900C2D66C /* CoreDataHotelServiceUITests.m */; };
 		7C1C4C211DECA33200C2D66C /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C4C201DECA33200C2D66C /* AutoLayout.m */; };
 		7C519DB61DEDC94F00E6222E /* RoomsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB51DEDC94F00E6222E /* RoomsVC.m */; };
+		7C519DB91DEDF73600E6222E /* DatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB81DEDF73600E6222E /* DatePickerVC.m */; };
+		7C519DBC1DEE114300E6222E /* AvailabilityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DBB1DEE114300E6222E /* AvailabilityVC.m */; };
+		7C519DBF1DEE1D4A00E6222E /* BookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DBE1DEE1D4A00E6222E /* BookVC.m */; };
 		7CA68D031DECD9F8004A3FA2 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CA68D021DECD9F8004A3FA2 /* hotels.json */; };
 		7CA68D061DECEF21004A3FA2 /* HotelsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA68D051DECEF21004A3FA2 /* HotelsVC.m */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,12 @@
 		7C1C4C201DECA33200C2D66C /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
 		7C519DB41DEDC94F00E6222E /* RoomsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsVC.h; sourceTree = "<group>"; };
 		7C519DB51DEDC94F00E6222E /* RoomsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsVC.m; sourceTree = "<group>"; };
+		7C519DB71DEDF73600E6222E /* DatePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerVC.h; sourceTree = "<group>"; };
+		7C519DB81DEDF73600E6222E /* DatePickerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerVC.m; sourceTree = "<group>"; };
+		7C519DBA1DEE114300E6222E /* AvailabilityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailabilityVC.h; sourceTree = "<group>"; };
+		7C519DBB1DEE114300E6222E /* AvailabilityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailabilityVC.m; sourceTree = "<group>"; };
+		7C519DBD1DEE1D4A00E6222E /* BookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookVC.h; sourceTree = "<group>"; };
+		7C519DBE1DEE1D4A00E6222E /* BookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookVC.m; sourceTree = "<group>"; };
 		7CA68D021DECD9F8004A3FA2 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		7CA68D041DECEF21004A3FA2 /* HotelsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelsVC.h; sourceTree = "<group>"; };
 		7CA68D051DECEF21004A3FA2 /* HotelsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsVC.m; sourceTree = "<group>"; };
@@ -150,6 +159,12 @@
 		7C1C4C1B1DECA2D100C2D66C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7C519DBD1DEE1D4A00E6222E /* BookVC.h */,
+				7C519DBE1DEE1D4A00E6222E /* BookVC.m */,
+				7C519DB71DEDF73600E6222E /* DatePickerVC.h */,
+				7C519DB81DEDF73600E6222E /* DatePickerVC.m */,
+				7C519DBA1DEE114300E6222E /* AvailabilityVC.h */,
+				7C519DBB1DEE114300E6222E /* AvailabilityVC.m */,
 				7CA68D041DECEF21004A3FA2 /* HotelsVC.h */,
 				7CA68D051DECEF21004A3FA2 /* HotelsVC.m */,
 				7C519DB41DEDC94F00E6222E /* RoomsVC.h */,
@@ -329,9 +344,12 @@
 				7C519DB61DEDC94F00E6222E /* RoomsVC.m in Sources */,
 				7C1C4BED1DEC9D8800C2D66C /* ViewController.m in Sources */,
 				7C1C4BEA1DEC9D8800C2D66C /* AppDelegate.m in Sources */,
+				7C519DBF1DEE1D4A00E6222E /* BookVC.m in Sources */,
 				7C1C4BE71DEC9D8800C2D66C /* main.m in Sources */,
 				7CA68D061DECEF21004A3FA2 /* HotelsVC.m in Sources */,
 				7C1C4BF31DEC9D8800C2D66C /* CoreDataHotelService.xcdatamodeld in Sources */,
+				7C519DB91DEDF73600E6222E /* DatePickerVC.m in Sources */,
+				7C519DBC1DEE114300E6222E /* AvailabilityVC.m in Sources */,
 				7C1C4C211DECA33200C2D66C /* AutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

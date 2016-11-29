@@ -27,7 +27,6 @@
     
     self.roomsTableView = [[UITableView alloc]init];
     self.roomsTableView.dataSource = self;
-    
     self.roomsTableView.delegate = self;
     self.roomsTableView.translatesAutoresizingMaskIntoConstraints = NO;
     
