@@ -17,7 +17,7 @@
 @interface AvailabilityVC () <UITableViewDelegate, UITableViewDataSource>
 
 @property(strong, nonatomic) UITableView *availabilityTableView;
-@property(strong, nonatomic) NSArray *availableRoomsDataSource; //dataSource as a backing array, not for the tableView
+@property(strong, nonatomic) NSFetchedResultsController *availableRooms; //dataSource as a backing array, not for the tableView
 
 @end
 
@@ -35,15 +35,15 @@
 
 }
 
--(NSArray *)availableRooms {
+-(NSFetchedResultsController *)availableRooms {
     //creating lazy property...
-    if (!_availableRoomsDataSource) {
+    if (!_availableRooms) {
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
         NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
-        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate is >= %a", self.startDate, [NSDate date]];
-        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate is >= %a", self.endDate, [NSDate date]];
+        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ && endDate >= %@", self.startDate, [NSDate date]];
+//        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate >= %a", self.endDate, [NSDate date]];
         
         NSError *requestError;
         NSArray *results = [context executeFetchRequest:request error:&requestError];
@@ -58,16 +58,19 @@
             [unavailableRooms addObject:reservation.room];
         }
         NSFetchRequest *roomRequest = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
-        roomRequest.predicate = [NSPredicate predicateWithFormat:@"NOT self IN %@", unavailableRooms];
+        roomRequest.predicate = [NSPredicate predicateWithFormat:@"NOT self IN %@", unavailableRooms]; // determines what data is now in the data set
+        roomRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"hotel.hotelName" ascending:YES]]; //how data is sorted
         
         NSError *roomRequestError;
-        _availableRoomsDataSource = [context executeFetchRequest:roomRequest error:&roomRequestError];
+        
+        _availableRooms = [[NSFetchedResultsController alloc]initWithFetchRequest:roomRequest managedObjectContext:context sectionNameKeyPath:@"hotel.hotelName" cacheName:nil];
+        [_availableRooms performFetch:&roomRequestError];
         
         if (roomRequestError) {
             NSLog(@"There was an error requesting available rooms");
         }
     }
-    return _availableRoomsDataSource;
+    return _availableRooms;
 }
 
 -(void)setupTableView {
@@ -91,7 +94,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    Room *room = self.availableRoomsDataSource[indexPath.row];
+    Room *room = [self.availableRooms objectAtIndexPath:indexPath];
     
     cell.textLabel.text = [NSString stringWithFormat:@"Room: %i(%i beds, $%.2f)",   room.roomNumber,
                                                                                     room.beds,
@@ -101,11 +104,29 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.availableRoomsDataSource.count;
+    
+    NSArray *sections = [self.availableRooms sections];
+    id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+    
+    return [sectionInfo numberOfObjects];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.availableRooms.sections.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    NSArray *sections = [self.availableRooms sections];
+    id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+    
+    Room *room = [[sectionInfo objects] objectAtIndex:section];
+    
+    return room.hotel.hotelName;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Room *room = self.availableRoomsDataSource[indexPath.row];
+    Room *room = [self.availableRooms objectAtIndexPath:indexPath];
     
     BookVC *bookVC = [[BookVC alloc]init];
     bookVC.room = room;
