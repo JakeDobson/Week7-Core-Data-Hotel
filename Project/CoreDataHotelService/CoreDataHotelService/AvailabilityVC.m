@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "AutoLayout.h"
 #import "Reservation+CoreDataClass.h"
+#import "Hotel+CoreDataClass.h"
 #import "Room+CoreDataClass.h"
 
 @interface AvailabilityVC () <UITableViewDelegate, UITableViewDataSource>
@@ -26,6 +27,7 @@
     [super loadView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self setupTableView];
+    [self setTitle:@"Available Rooms"];
 }
 
 -(void)viewDidLoad {
@@ -40,7 +42,8 @@
         NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
-        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate is >= %a", self.endDate, [NSDate date]]; //copy this for startDate
+        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate is >= %a", self.startDate, [NSDate date]];
+        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate is >= %a", self.endDate, [NSDate date]];
         
         NSError *requestError;
         NSArray *results = [context executeFetchRequest:request error:&requestError];
@@ -74,12 +77,14 @@
     self.availabilityTableView.translatesAutoresizingMaskIntoConstraints = NO; //has to be before the subview
     
     [self.view addSubview:self.availabilityTableView];
+    
     [self.availabilityTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     [AutoLayout activateFullViewConstraintsUsingVFLFor:self.availabilityTableView];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"cell");
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"
                                                         forIndexPath:indexPath];
     
@@ -88,7 +93,9 @@
     }
     Room *room = self.availableRoomsDataSource[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Room: %i(%i beds, $%.2f)", room.roomNumber, room.beds, room.rate.floatValue];
+    cell.textLabel.text = [NSString stringWithFormat:@"Room: %i(%i beds, $%.2f)",   room.roomNumber,
+                                                                                    room.beds,
+                                                                                    room.rate.floatValue];
     
     return cell;
 }
@@ -103,6 +110,7 @@
     BookVC *bookVC = [[BookVC alloc]init];
     bookVC.room = room;
     bookVC.endDate = self.endDate;
+    //bookVC.startDate = self.startDate;
     
     [self.navigationController pushViewController:bookVC animated:YES];
 }

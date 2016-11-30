@@ -7,6 +7,7 @@
 //
 
 #import "BookVC.h"
+#import"AvailabilityVC.h"
 #import "AutoLayout.h"
 #import "AppDelegate.h" //will be saving to the Core Data context...
 #import "Room+CoreDataClass.h"
@@ -16,8 +17,9 @@
 
 @interface BookVC ()
 
-@property(strong, nonatomic) UITextField *nameField;
-// create 2 more prop text fields
+@property(strong, nonatomic) UITextField *firstNameField;
+@property(strong, nonatomic) UITextField *lastNameField;
+@property(strong, nonatomic) UITextField *emailField;
 
 @end
 
@@ -28,7 +30,7 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self setupMessageLabel];
-    [self setupNameTextField];
+    [self setupTextFields];
     
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                                                             target:self
@@ -61,52 +63,92 @@
     [AutoLayout createGenericConstraintFrom:messageLabel
                                      toView:self.view
                               withAttribute:NSLayoutAttributeCenterY];
-    messageLabel.text = [NSString stringWithFormat:@"Reservation At:%@\nRoom:%i\nFrom:Today - %@", self.room.hotel.hotelName, self.room.roomNumber, self.endDate];//dont forget to add self.startDate for hw
+    messageLabel.text = [NSString stringWithFormat:@"Reservation At:%@\nRoom:%i\nFrom: %@ - %@", self.room.hotel.hotelName, self.room.roomNumber, self.startDate, self.endDate];//dont forget to add self.startDate for hw
 }
 
--(void)setupNameTextField {
-    self.nameField = [[UITextField alloc]init];
+-(void)setupTextFields {
+    //initilaizers
+    self.firstNameField = [[UITextField alloc]init];
+    self.lastNameField = [[UITextField alloc]init];
+    self.emailField = [[UITextField alloc]init];
     
-    self.nameField.placeholder = @"Please enter your name...";
+    //placeholders
+    self.firstNameField.placeholder = @"enter your first name...";
+    self.lastNameField.placeholder = @"enter your last name...";
+    self.emailField.placeholder = @"enter your email address...";
     
-    [self.nameField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    //sizing masks
+    [self.firstNameField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.lastNameField setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.emailField setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self.view addSubview:self.nameField];
+    //add subviews
+    [self.view addSubview:self.firstNameField];
+    [self.view addSubview:self.lastNameField];
+    [self.view addSubview:self.emailField];
     
-    CGFloat myMargin = 20.0;
-    CGFloat navAndStatusBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame) + 20.0; // 20.0 for status bar
+    CGFloat myMargin = 20.0; //magic number for margin
+    CGFloat navAndStatusBarHeight = CGRectGetHeight(self.navigationController.navigationBar.frame) + myMargin; // + "20.0" to account for status bar
     
-    NSLayoutConstraint *top = [AutoLayout createGenericConstraintFrom:self.nameField toView:self.view withAttribute:NSLayoutAttributeTop];
-    top.constant = navAndStatusBarHeight + myMargin;;
+    //firstNameField Constraints
+    NSLayoutConstraint *top = [AutoLayout createGenericConstraintFrom:self.firstNameField
+                                                               toView:self.view
+                                                        withAttribute:NSLayoutAttributeTop];
+    top.constant = navAndStatusBarHeight + myMargin;
     
-    NSLayoutConstraint *leading = [AutoLayout createLeadingConstraintFrom:self.nameField toView:self.view];
-    leading.constant = myMargin;
+    NSLayoutConstraint *firstNameleading = [AutoLayout createLeadingConstraintFrom:self.firstNameField toView:self.view];
+    firstNameleading.constant = myMargin;
     
-    NSLayoutConstraint *trailing = [AutoLayout createLeadingConstraintFrom:self.nameField toView:self.view];
-    trailing.constant = myMargin;
+    NSLayoutConstraint *firstNametrailing = [AutoLayout createLeadingConstraintFrom:self.firstNameField toView:self.view];
+    firstNametrailing.constant = myMargin;
     
-    [self.nameField becomeFirstResponder]; //pulls up the keyboard when clicked on
+    //lastNameField constraints
+    NSLayoutConstraint *topToFirstNameField = [AutoLayout createGenericConstraintFrom:self.lastNameField
+                                                                               toView:self.firstNameField
+                                                                        withAttribute:NSLayoutAttributeTop];
+    topToFirstNameField.constant = 36;
+    
+    NSLayoutConstraint *lastNameLeading = [AutoLayout createLeadingConstraintFrom:self.lastNameField toView:self.view];
+    lastNameLeading.constant = myMargin;
+    NSLayoutConstraint *lastNameTrailing = [AutoLayout createTrailingConstraintFrom:self.lastNameField toView:self.view];
+    lastNameTrailing.constant = myMargin;
+    
+    //emailField constraints
+    NSLayoutConstraint *topToLastNameField = [AutoLayout createGenericConstraintFrom:self.emailField
+                                                                              toView:self.lastNameField
+                                                                       withAttribute:NSLayoutAttributeTop];
+    topToLastNameField.constant = 36;
+    
+    NSLayoutConstraint *emailLeading = [AutoLayout createLeadingConstraintFrom:self.emailField toView:self.view];
+    emailLeading.constant = myMargin;
+    NSLayoutConstraint *emailTrailing = [AutoLayout createTrailingConstraintFrom:self.emailField toView:self.view];
+    emailTrailing.constant = myMargin;
+    
+    [self.emailField becomeFirstResponder]; //pulls up the keyboard when clicked on
 }
 
 //what to do when they click on the save button
 -(void)saveButtonSelected:(UIBarButtonItem *)sender {
     
-    // if self.textField is empty...do not create reservation! -- error handling here..
+    // if text fields are empty...do not create reservation! -- error handling here..
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate]; // delegate is id, so cast into AppDelegate
     
     NSManagedObjectContext *context = appDelegate.persistentContainer.viewContext;
     
-    Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservaton" inManagedObjectContext:context];
+    Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
     
     reservation.startDate = [NSDate date];
     reservation.endDate = self.endDate;
     reservation.room = self.room;
     
-    self.room.reservations = [self.room.reservations setByAddingObject:reservation]; //adds reservation to that set and replaces the new on (calulate what's on right and reassinging it back into itself) "pointer manipulation"
+    self.room.reservations = [self.room.reservations setByAddingObject:reservation]; //adds reservation to that set and replaces the new one (calulate what's on right and reassinging it back into itself) called "pointer manipulation"
     
+    //assigning user text input to guest reservations object
     reservation.guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:context];
-    reservation.guest.name = self.nameField.text;
+    reservation.guest.firstName = self.firstNameField.text;
+    reservation.guest.lastName = self.lastNameField.text;
+    reservation.guest.email = self.emailField.text;
     
     NSError *saveError;
     [context save:&saveError];

@@ -159,18 +159,11 @@
 		7C1C4C1B1DECA2D100C2D66C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7C519DBD1DEE1D4A00E6222E /* BookVC.h */,
-				7C519DBE1DEE1D4A00E6222E /* BookVC.m */,
-				7C519DB71DEDF73600E6222E /* DatePickerVC.h */,
-				7C519DB81DEDF73600E6222E /* DatePickerVC.m */,
-				7C519DBA1DEE114300E6222E /* AvailabilityVC.h */,
-				7C519DBB1DEE114300E6222E /* AvailabilityVC.m */,
-				7CA68D041DECEF21004A3FA2 /* HotelsVC.h */,
-				7CA68D051DECEF21004A3FA2 /* HotelsVC.m */,
-				7C519DB41DEDC94F00E6222E /* RoomsVC.h */,
-				7C519DB51DEDC94F00E6222E /* RoomsVC.m */,
 				7C1C4BEB1DEC9D8800C2D66C /* ViewController.h */,
 				7C1C4BEC1DEC9D8800C2D66C /* ViewController.m */,
+				7C519DC01DEE3E1C00E6222E /* Browse */,
+				7C519DC11DEE3E3100E6222E /* Book */,
+				7C519DC21DEE3E4600E6222E /* Lookup */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -203,6 +196,37 @@
 				7C1C4BF91DEC9D8800C2D66C /* Info.plist */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		7C519DC01DEE3E1C00E6222E /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				7CA68D041DECEF21004A3FA2 /* HotelsVC.h */,
+				7CA68D051DECEF21004A3FA2 /* HotelsVC.m */,
+				7C519DB41DEDC94F00E6222E /* RoomsVC.h */,
+				7C519DB51DEDC94F00E6222E /* RoomsVC.m */,
+			);
+			name = Browse;
+			sourceTree = "<group>";
+		};
+		7C519DC11DEE3E3100E6222E /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				7C519DB71DEDF73600E6222E /* DatePickerVC.h */,
+				7C519DB81DEDF73600E6222E /* DatePickerVC.m */,
+				7C519DBA1DEE114300E6222E /* AvailabilityVC.h */,
+				7C519DBB1DEE114300E6222E /* AvailabilityVC.m */,
+				7C519DBD1DEE1D4A00E6222E /* BookVC.h */,
+				7C519DBE1DEE1D4A00E6222E /* BookVC.m */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		7C519DC21DEE3E4600E6222E /* Lookup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lookup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

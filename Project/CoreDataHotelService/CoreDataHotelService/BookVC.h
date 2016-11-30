@@ -12,7 +12,7 @@
 @interface BookVC : UIViewController
 
 @property(strong, nonatomic) Room *room;
+@property(strong, nonatomic) NSDate *startDate;
 @property(strong, nonatomic) NSDate *endDate;
-//add prop for startDate
 
 @end
