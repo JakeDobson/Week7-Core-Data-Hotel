@@ -25,7 +25,7 @@
     self.testController = [[UIViewController alloc]init];
     self.testView1 = [[UIView alloc]init];
     self.testView2 = [[UIView alloc]init];
-    //self.testView2 = self.testView1; //will not work, but showing that it will fail!
+    //self.testView2 = self.testView1; //will not work
     
     [self.testController.view addSubview:self.testView1];
     [self.testController.view addSubview:self.testView2];
@@ -70,18 +70,6 @@
     XCTAssert(count == 0, @"Array contains %i objects that are not NSLayout constraints", count);
 }
 
-//-(void)
-
-//-(void)
-//
-//
-//-(void)
-//
-//
-//-(void)
-//
-//
-//-(void)
 
     
 @end

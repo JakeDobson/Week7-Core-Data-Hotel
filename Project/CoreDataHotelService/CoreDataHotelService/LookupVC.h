@@ -11,6 +11,4 @@
 
 @interface LookupVC : UIViewController
 
-@property(strong, nonatomic)Reservation *reservation;
-
 @end
