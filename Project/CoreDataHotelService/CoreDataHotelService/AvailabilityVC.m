@@ -43,7 +43,6 @@
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
         request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ && endDate >= %@", self.startDate, [NSDate date]];
-//        request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %a && endDate >= %a", self.endDate, [NSDate date]];
         
         NSError *requestError;
         NSArray *results = [context executeFetchRequest:request error:&requestError];

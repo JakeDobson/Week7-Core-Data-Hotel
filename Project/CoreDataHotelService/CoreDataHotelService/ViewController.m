@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DatePickerVC.h"
 #import "HotelsVC.h"
+#import "LookupVC.h"
 #import "AutoLayout.h"
 #import "Hotel+CoreDataClass.h"
 
@@ -94,6 +95,7 @@
     //control event targets for pushing vc's
     [browseButton addTarget:self action:@selector(browseButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
     [bookButton addTarget:self action:@selector(bookButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+    [lookupButton addTarget:self action:@selector(lookupButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -111,6 +113,13 @@
     [self.navigationController pushViewController:datePickerVC animated:YES];
 }
 
+-(void)lookupButtonSelected:(UIButton *)sender {
+    
+    LookupVC *lookupVC = [[LookupVC alloc]init];
+    
+    [self.navigationController pushViewController:lookupVC animated:YES];
+}
+
 
 -(UIButton *)createButtonWithTitle:(NSString *)title andBackgroundColor:(UIColor *)color {
     
@@ -126,7 +135,6 @@
     [self.view addSubview:button];
     
     return button;
-    
 }
 
 

@@ -14,6 +14,7 @@
 		7C1C4BF51DEC9D8800C2D66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C4BF41DEC9D8800C2D66C /* Assets.xcassets */; };
 		7C1C4BF81DEC9D8800C2D66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C4BF61DEC9D8800C2D66C /* LaunchScreen.storyboard */; };
 		7C1C4C211DECA33200C2D66C /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C4C201DECA33200C2D66C /* AutoLayout.m */; };
+		7C3919691DEF88F600069519 /* LookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3919681DEF88F600069519 /* LookupVC.m */; };
 		7C519DB61DEDC94F00E6222E /* RoomsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB51DEDC94F00E6222E /* RoomsVC.m */; };
 		7C519DB91DEDF73600E6222E /* DatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB81DEDF73600E6222E /* DatePickerVC.m */; };
 		7C519DBC1DEE114300E6222E /* AvailabilityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DBB1DEE114300E6222E /* AvailabilityVC.m */; };
@@ -62,6 +63,8 @@
 		7C1C4C091DEC9D8900C2D66C /* CoreDataHotelServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataHotelServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1C4C1F1DECA33200C2D66C /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayout.h; sourceTree = "<group>"; };
 		7C1C4C201DECA33200C2D66C /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
+		7C3919671DEF88F600069519 /* LookupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupVC.h; sourceTree = "<group>"; };
+		7C3919681DEF88F600069519 /* LookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupVC.m; sourceTree = "<group>"; };
 		7C519DB41DEDC94F00E6222E /* RoomsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsVC.h; sourceTree = "<group>"; };
 		7C519DB51DEDC94F00E6222E /* RoomsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsVC.m; sourceTree = "<group>"; };
 		7C519DB71DEDF73600E6222E /* DatePickerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerVC.h; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 		7C519DC21DEE3E4600E6222E /* Lookup */ = {
 			isa = PBXGroup;
 			children = (
+				7C3919671DEF88F600069519 /* LookupVC.h */,
+				7C3919681DEF88F600069519 /* LookupVC.m */,
 			);
 			name = Lookup;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 			files = (
 				7C519DB61DEDC94F00E6222E /* RoomsVC.m in Sources */,
 				7C1C4BED1DEC9D8800C2D66C /* ViewController.m in Sources */,
+				7C3919691DEF88F600069519 /* LookupVC.m in Sources */,
 				7C1C4BEA1DEC9D8800C2D66C /* AppDelegate.m in Sources */,
 				7C519DBF1DEE1D4A00E6222E /* BookVC.m in Sources */,
 				7C1C4BE71DEC9D8800C2D66C /* main.m in Sources */,
