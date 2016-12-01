@@ -6,6 +6,8 @@
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
+#import <Flurry.h>
+
 #import "BookVC.h"
 #import"AvailabilityVC.h"
 #import "AutoLayout.h"
@@ -39,7 +41,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 -(void)setupMessageLabel {
@@ -157,6 +158,9 @@
         NSLog(@"There was an error saving new reservation");
     } else {
         NSLog(@"Saved Reservation Successfully!");
+        
+        NSDictionary *parameters = @{@"GuestName":reservation.guest.firstName};
+        [Flurry logEvent:@"Reservation_Booked" withParameters:parameters];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

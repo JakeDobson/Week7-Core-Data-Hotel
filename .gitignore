@@ -23,12 +23,15 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+*CoreDataHotelService/Constants.h
 
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+
 
 # CocoaPods
 #

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
+#import <Flurry.h>
+
 #import "LookupVC.h"
 #import "BookVC.h"
 
@@ -34,14 +36,15 @@
     [super loadView];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-    [self setupTableView];
-    [self setupSearchBar];
+    [self setupSearchBarAndTableView];
     [self setupFetchRequestAndContext];
     [self setTitle:@"Guests"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [Flurry logEvent:@"Timed_User_Search" timed:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -50,9 +53,25 @@
     [self.tableView reloadData];
 }
 
--(void)setupTableView {
-    self.tableView = [[UITableView alloc]init];
+-(void)setupSearchBarAndTableView {
+    //searchBar
+    self.searchBar = [[UISearchBar alloc]init];
+    self.searchBar.delegate = self;
+    self.searchBar.placeholder = @"enter your email...";
+    [self.searchBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:self.searchBar];
     
+    //constraints
+    [AutoLayout createLeadingConstraintFrom:self.searchBar toView:self.view];
+    [AutoLayout createTrailingConstraintFrom:self.searchBar toView:self.view];
+    
+    NSLayoutConstraint *topConstraint = [AutoLayout createGenericConstraintFrom:self.searchBar
+                                                                         toView:self.view
+                                                                  withAttribute:NSLayoutAttributeTop];
+    topConstraint.constant = 64.0;
+    
+    //tableView
+    self.tableView = [[UITableView alloc]init];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -65,31 +84,14 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"cell"];
     
-    [AutoLayout activateFullViewConstraintsUsingVFLFor:self.tableView];
-}
-
--(void)setupSearchBar {
-    self.searchBar = [[UISearchBar alloc]init];
-    
-    self.searchBar.delegate = self;
-    
-    self.searchBar.placeholder = @"enter your email...";
-    
-    [self.searchBar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    [self.view addSubview:self.searchBar];
-    
-    [self.searchBar becomeFirstResponder];
-    
     //constraints
-    [AutoLayout createLeadingConstraintFrom:self.view toView:self.searchBar];
-    [AutoLayout createTrailingConstraintFrom:self.view toView:self.searchBar];
+    [AutoLayout createLeadingConstraintFrom:self.tableView toView:self.view];
+    [AutoLayout createTrailingConstraintFrom:self.tableView toView:self.view];
     
-    NSLayoutConstraint *topConstraint = [AutoLayout createGenericConstraintFrom:self.searchBar
-                                                                         toView:self.view
-                                                                  withAttribute:NSLayoutAttributeTop];
-    topConstraint.constant = 64.0;
-
+    NSLayoutConstraint *tableViewTop = [AutoLayout createGenericConstraintFrom:self.tableView toView:self.searchBar withAttribute:NSLayoutAttributeTop];
+    tableViewTop.constant = 44.0;//CGRectGetHeight(self.searchBar.frame);
+    
+    [AutoLayout createGenericConstraintFrom:self.tableView toView:self.view withAttribute:NSLayoutAttributeBottom];
 }
 
 -(void)setupFetchRequestAndContext {
@@ -152,9 +154,14 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.searchBar becomeFirstResponder];
+    
     if (self.searchBar.text) {
+        [Flurry logEvent:@"User_Searched_Reservations"];
+        [Flurry logEvent:@"Timed_User_Search" withParameters:nil];
         [self.tableView reloadData];
     }
+    [self.searchBar resignFirstResponder];
 }
 
 

@@ -6,6 +6,10 @@
 //  Copyright © 2016 Jacob Dobson. All rights reserved.
 //
 
+#import <Flurry.h>
+
+#include "Constants.h"
+
 #import "AppDelegate.h"
 #import "ViewController.h"
 
@@ -24,6 +28,10 @@
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [Flurry startSession:kAPIKey];
+    
+    [Flurry logEvent:@"App_Opened"];
+    
     [self setupRootViewController];
     
     [self bootstrapApp];
@@ -40,7 +48,6 @@
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
-    
 }
 
 

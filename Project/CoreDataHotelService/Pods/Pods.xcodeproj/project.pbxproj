@@ -1,0 +1,824 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05BC23057074DBF1E8879E9E6FF325F8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABF0F60F894F10F0E95DD9612054C40 /* Security.framework */; };
+		13DA7286351E486BA0E45E6BFBD32834 /* FlurryAdError.h in Headers */ = {isa = PBXBuildFile; fileRef = 37812C315C418AD4F13FF2590D7239B1 /* FlurryAdError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFE46D843666812B87AA46443FF8B79 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68619F58862E26B5DED9BC10FC97E2E /* MediaPlayer.framework */; };
+		1E7A558162C5BE544674C2C071B4CC64 /* FlurryAdNativeStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 98C9445C2558DB8215C7919E725E96E9 /* FlurryAdNativeStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27CAC0773FE30A28E3158D0606DC566E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB3390AA3D0A13B8CD7B2379612C5FB /* StoreKit.framework */; };
+		29BD8106FA3AFCAB5A991C2D332A41A8 /* FlurrySessionBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = FF654D5A13773B9FF17F1B1D33D40B55 /* FlurrySessionBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B90D8658D6F7B2BEC1E48E7C4A0B47B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */; };
+		3DC01EA99B0CCF88423014C50134D310 /* FlurryAdInterstitial.h in Headers */ = {isa = PBXBuildFile; fileRef = 6842F92A96AC82C7E50F7E4B68963D99 /* FlurryAdInterstitial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4607236168582B1055F84AFFA7308F8D /* Pods-CoreDataHotelServiceTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 806EB276BF0EAE83063EBE4881D2B441 /* Pods-CoreDataHotelServiceTests-dummy.m */; };
+		5045FC9D28BD0983DF8B98415624645B /* Flurry-iOS-SDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F5713B35FCAEA34CA539D6AA96B657 /* Flurry-iOS-SDK-dummy.m */; };
+		544EA09083C5C3807A6547985CB06128 /* FlurryAds.h in Headers */ = {isa = PBXBuildFile; fileRef = 268FDBE73FDF9BB7C7AED8C7D1F11108 /* FlurryAds.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7389F43408DA6A1968CA65EA7C12D200 /* FlurryEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF3D4AE8F1B72A13718D865B7450CF2 /* FlurryEmpty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8066639A3C6241FB42F3ACCE79AA8CAF /* Flurry.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9F540EB5CB8728AFB52D96E8C07285 /* Flurry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		847A23D5BB73444A1A96F4107A4E0B48 /* FlurryAdTargeting.h in Headers */ = {isa = PBXBuildFile; fileRef = E86EE24E3F248C58C64B6875FD974F1D /* FlurryAdTargeting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86856288B101FE49E10EE42D4C4882FC /* FlurryAdNativeAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AE096C76B124A6D131AF51C6CBAB59F /* FlurryAdNativeAsset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88975CDE9BC676540E937E4BBFC6013E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80ADFA6D89EE3A67094AE42C532B7C24 /* CoreGraphics.framework */; };
+		992F234F2671B6E904F741585DB56552 /* Pods-CoreDataHotelService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29899430E00E305BBDC02056209FFD21 /* Pods-CoreDataHotelService-dummy.m */; };
+		99B13349C17C127B97313AE0225A6ADA /* FlurryAdsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE9401B7E8B35CFD67241FD7B57A266 /* FlurryAdsEmpty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A753E39C9CD01EBFB3DD3ECF2846D0C5 /* FlurryAdDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A6982A28779F389A9C9F9F1E47DED247 /* FlurryAdDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABCD45A5E75E5779D87FE2EAD7DA0340 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3567481EA8642F0E1DF90AA24903415C /* SystemConfiguration.framework */; };
+		B70682A32AE04D240D7695939C268F90 /* FlurryAdBannerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 323C1444EA07BACEA15B3E9C6DA8CA2D /* FlurryAdBannerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B9642524E32F802809C95448CEBD0257 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */; };
+		BD27FBB141B544121453698F7C38A530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */; };
+		BD2C66CF56CE22C759BDEDA641EBBEE3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDF954C56312474A815E952C14EEE56 /* AVFoundation.framework */; };
+		BDB442213CAABB27C46AD33C077797EC /* FlurryAdInterstitialDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 412526003B65B1D430BEFB97E4EDBD01 /* FlurryAdInterstitialDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C562B7934AD20716AFB462848FF945DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B46741E8E8372B6C680BDA86A06826A /* UIKit.framework */; };
+		CB1F1BA1FB9A0010DEC098A0A5C58AB2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D41431FC13E2AB9FA89D7DD85905DD /* CoreMedia.framework */; };
+		CFC29E16137632F684B8780CC611A942 /* FlurryAdNativeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 70DE362E41AA045F7B4996FD89752557 /* FlurryAdNativeDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D679B354CF6C263415D154A17F7B6236 /* Pods-CoreDataHotelServiceUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB296F1132336D9EAC32A0EA77D222A5 /* Pods-CoreDataHotelServiceUITests-dummy.m */; };
+		D6FF7A992960E45153B13470E82A862A /* FlurryAdNative.h in Headers */ = {isa = PBXBuildFile; fileRef = D26D5D09A8F749E0ACB519A516033F67 /* FlurryAdNative.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDC7E9C264E2BBDC64C615F4A9D7CDCA /* FlurryAdBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 4591E14ECE3EF5C8917D7F414DE4CE1B /* FlurryAdBanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAEB15973D291590DCD5F6251DED3A5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FDED13C24FE437C85B471C4FF257D5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8AE938CFB44C03989B272A0E7CC172C;
+			remoteInfo = "Flurry-iOS-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		026E8A8459446A11537D6BC634418200 /* Pods-CoreDataHotelServiceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelServiceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		03EF40D5DFC3421DD55F76BEB3355ECF /* libPods-CoreDataHotelService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CoreDataHotelService.a"; path = "libPods-CoreDataHotelService.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		096F0C8A2E79E816B4707F0D8E830920 /* Pods-CoreDataHotelService-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelService-frameworks.sh"; sourceTree = "<group>"; };
+		1B0D9C3BF203B1CAF0EF83870B2CC7C4 /* Pods-CoreDataHotelService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelService.debug.xcconfig"; sourceTree = "<group>"; };
+		268FDBE73FDF9BB7C7AED8C7D1F11108 /* FlurryAds.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAds.h; path = FlurryAds/StaticAPI/FlurryAds.h; sourceTree = "<group>"; };
+		29899430E00E305BBDC02056209FFD21 /* Pods-CoreDataHotelService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoreDataHotelService-dummy.m"; sourceTree = "<group>"; };
+		30EB294AA09483DD19113902F0798EB5 /* Pods-CoreDataHotelServiceUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelServiceUITests-resources.sh"; sourceTree = "<group>"; };
+		323A1A0615C5BB50859F4EB0308352E5 /* Pods-CoreDataHotelServiceUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoreDataHotelServiceUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		323C1444EA07BACEA15B3E9C6DA8CA2D /* FlurryAdBannerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdBannerDelegate.h; path = FlurryAds/FlurryAdBanner/FlurryAdBannerDelegate.h; sourceTree = "<group>"; };
+		3567481EA8642F0E1DF90AA24903415C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		37812C315C418AD4F13FF2590D7239B1 /* FlurryAdError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdError.h; path = FlurryAds/Shared/FlurryAdError.h; sourceTree = "<group>"; };
+		38BF4802F6EF7DE29884840879924A36 /* Pods-CoreDataHotelServiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelServiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3DAF215A041DA41F51C4B967CCA91C02 /* libFlurry_7.8.2.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libFlurry_7.8.2.a; path = Flurry/libFlurry_7.8.2.a; sourceTree = "<group>"; };
+		3DDF954C56312474A815E952C14EEE56 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		412526003B65B1D430BEFB97E4EDBD01 /* FlurryAdInterstitialDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdInterstitialDelegate.h; path = FlurryAds/FlurryAdInterstitial/FlurryAdInterstitialDelegate.h; sourceTree = "<group>"; };
+		42BFA3F5880EDBD2A3177134B401FABE /* Pods-CoreDataHotelServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelServiceTests.release.xcconfig"; sourceTree = "<group>"; };
+		4591E14ECE3EF5C8917D7F414DE4CE1B /* FlurryAdBanner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdBanner.h; path = FlurryAds/FlurryAdBanner/FlurryAdBanner.h; sourceTree = "<group>"; };
+		58ECCCBCF5FCE9DDF3C859797CB610B0 /* Pods-CoreDataHotelServiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelServiceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5E0E4A2C7A9E71E4717D663397143916 /* Pods-CoreDataHotelServiceTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoreDataHotelServiceTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6382799A844B0240C15BE3142159EB75 /* Pods-CoreDataHotelService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CoreDataHotelService.release.xcconfig"; sourceTree = "<group>"; };
+		63D41431FC13E2AB9FA89D7DD85905DD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		6842F92A96AC82C7E50F7E4B68963D99 /* FlurryAdInterstitial.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdInterstitial.h; path = FlurryAds/FlurryAdInterstitial/FlurryAdInterstitial.h; sourceTree = "<group>"; };
+		68B8D6373084E4BB19694861671C672A /* Pods-CoreDataHotelServiceUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoreDataHotelServiceUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		698C8E8A41883187379EF41CA73E8F54 /* libPods-CoreDataHotelServiceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CoreDataHotelServiceTests.a"; path = "libPods-CoreDataHotelServiceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A05CA7482CF67A96128AE99E7C53E59 /* libFlurryAds_7.8.2.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libFlurryAds_7.8.2.a; path = FlurryAds/libFlurryAds_7.8.2.a; sourceTree = "<group>"; };
+		70DE362E41AA045F7B4996FD89752557 /* FlurryAdNativeDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdNativeDelegate.h; path = FlurryAds/FlurryAdNative/FlurryAdNativeDelegate.h; sourceTree = "<group>"; };
+		7770D7EFC667F56D2E9C08BAB2C252B2 /* Flurry-iOS-SDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Flurry-iOS-SDK-prefix.pch"; sourceTree = "<group>"; };
+		7877A02C5ED6E802406393EC09E4A617 /* Flurry-iOS-SDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Flurry-iOS-SDK.xcconfig"; sourceTree = "<group>"; };
+		806EB276BF0EAE83063EBE4881D2B441 /* Pods-CoreDataHotelServiceTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoreDataHotelServiceTests-dummy.m"; sourceTree = "<group>"; };
+		80ADFA6D89EE3A67094AE42C532B7C24 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		8AE096C76B124A6D131AF51C6CBAB59F /* FlurryAdNativeAsset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdNativeAsset.h; path = FlurryAds/FlurryAdNative/FlurryAdNativeAsset.h; sourceTree = "<group>"; };
+		8B46741E8E8372B6C680BDA86A06826A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		8F1C41493EE92DF3C315DA921083FF3C /* Pods-CoreDataHotelServiceTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelServiceTests-frameworks.sh"; sourceTree = "<group>"; };
+		901C9F9D1ACDC3B250A78AE0D7592E90 /* Pods-CoreDataHotelService-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoreDataHotelService-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98C9445C2558DB8215C7919E725E96E9 /* FlurryAdNativeStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdNativeStyle.h; path = FlurryAds/FlurryAdNative/FlurryAdNativeStyle.h; sourceTree = "<group>"; };
+		9CB5730B7DB30A65F8B76CBC1ECEDA6A /* libPods-CoreDataHotelServiceUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CoreDataHotelServiceUITests.a"; path = "libPods-CoreDataHotelServiceUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4F5713B35FCAEA34CA539D6AA96B657 /* Flurry-iOS-SDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Flurry-iOS-SDK-dummy.m"; sourceTree = "<group>"; };
+		A68619F58862E26B5DED9BC10FC97E2E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		A6982A28779F389A9C9F9F1E47DED247 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdDelegate.h; path = FlurryAds/StaticAPI/FlurryAdDelegate.h; sourceTree = "<group>"; };
+		AC70EC13C9A3AF38C3E552E3FEE1A5F1 /* Pods-CoreDataHotelService-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CoreDataHotelService-acknowledgements.markdown"; sourceTree = "<group>"; };
+		ACB3390AA3D0A13B8CD7B2379612C5FB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		AEF3D4AE8F1B72A13718D865B7450CF2 /* FlurryEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlurryEmpty.m; path = Flurry/FlurryEmpty.m; sourceTree = "<group>"; };
+		B7D9371739F601C506DAF4B3133346FB /* Pods-CoreDataHotelServiceUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelServiceUITests-frameworks.sh"; sourceTree = "<group>"; };
+		C8BF8B92F024EA98E44E0E0FBF5F40A5 /* Pods-CoreDataHotelServiceTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelServiceTests-resources.sh"; sourceTree = "<group>"; };
+		C97FE5A617237A954953E0F8CB0626BD /* Pods-CoreDataHotelServiceTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CoreDataHotelServiceTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CB296F1132336D9EAC32A0EA77D222A5 /* Pods-CoreDataHotelServiceUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CoreDataHotelServiceUITests-dummy.m"; sourceTree = "<group>"; };
+		CD9F540EB5CB8728AFB52D96E8C07285 /* Flurry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = "<group>"; };
+		D26D5D09A8F749E0ACB519A516033F67 /* FlurryAdNative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdNative.h; path = FlurryAds/FlurryAdNative/FlurryAdNative.h; sourceTree = "<group>"; };
+		E86EE24E3F248C58C64B6875FD974F1D /* FlurryAdTargeting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurryAdTargeting.h; path = FlurryAds/Shared/FlurryAdTargeting.h; sourceTree = "<group>"; };
+		EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF1ED937F99A96B5D6B8AF652AE65A30 /* libFlurry-iOS-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libFlurry-iOS-SDK.a"; path = "libFlurry-iOS-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABF0F60F894F10F0E95DD9612054C40 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		FCEADC805DCBDB1B7420B975DF53AF20 /* Pods-CoreDataHotelService-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CoreDataHotelService-resources.sh"; sourceTree = "<group>"; };
+		FEE9401B7E8B35CFD67241FD7B57A266 /* FlurryAdsEmpty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FlurryAdsEmpty.m; path = FlurryAds/FlurryAdsEmpty.m; sourceTree = "<group>"; };
+		FF654D5A13773B9FF17F1B1D33D40B55 /* FlurrySessionBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FlurrySessionBuilder.h; path = Flurry/FlurrySessionBuilder.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1ED8B2FECBA6F8B8CDB46579AD901699 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD27FBB141B544121453698F7C38A530 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A530A7C983A72AC25044563C1678331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9642524E32F802809C95448CEBD0257 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9FE4FCEADB46671E010BBDAC2FEA281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2C66CF56CE22C759BDEDA641EBBEE3 /* AVFoundation.framework in Frameworks */,
+				88975CDE9BC676540E937E4BBFC6013E /* CoreGraphics.framework in Frameworks */,
+				CB1F1BA1FB9A0010DEC098A0A5C58AB2 /* CoreMedia.framework in Frameworks */,
+				2B90D8658D6F7B2BEC1E48E7C4A0B47B /* Foundation.framework in Frameworks */,
+				1AFE46D843666812B87AA46443FF8B79 /* MediaPlayer.framework in Frameworks */,
+				05BC23057074DBF1E8879E9E6FF325F8 /* Security.framework in Frameworks */,
+				27CAC0773FE30A28E3158D0606DC566E /* StoreKit.framework in Frameworks */,
+				ABCD45A5E75E5779D87FE2EAD7DA0340 /* SystemConfiguration.framework in Frameworks */,
+				C562B7934AD20716AFB462848FF945DF /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED6F997FEDCD4005E182F4D3943C4068 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAEB15973D291590DCD5F6251DED3A5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24002A6670E6882ECD6250D3E60F9CB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67CA985B3CF631964B0A936C28CEE170 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E2E631BF719C06B5520D3BCCE2A3831 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62B1A8DA21306B79400CB096E698524B /* Pods-CoreDataHotelService */,
+				55135C4060B311586A6103C64D7D0366 /* Pods-CoreDataHotelServiceTests */,
+				9DCDBFBB3CD31CCBA558B0E5EBB0D639 /* Pods-CoreDataHotelServiceUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		55135C4060B311586A6103C64D7D0366 /* Pods-CoreDataHotelServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E0E4A2C7A9E71E4717D663397143916 /* Pods-CoreDataHotelServiceTests-acknowledgements.markdown */,
+				C97FE5A617237A954953E0F8CB0626BD /* Pods-CoreDataHotelServiceTests-acknowledgements.plist */,
+				806EB276BF0EAE83063EBE4881D2B441 /* Pods-CoreDataHotelServiceTests-dummy.m */,
+				8F1C41493EE92DF3C315DA921083FF3C /* Pods-CoreDataHotelServiceTests-frameworks.sh */,
+				C8BF8B92F024EA98E44E0E0FBF5F40A5 /* Pods-CoreDataHotelServiceTests-resources.sh */,
+				026E8A8459446A11537D6BC634418200 /* Pods-CoreDataHotelServiceTests.debug.xcconfig */,
+				42BFA3F5880EDBD2A3177134B401FABE /* Pods-CoreDataHotelServiceTests.release.xcconfig */,
+			);
+			name = "Pods-CoreDataHotelServiceTests";
+			path = "Target Support Files/Pods-CoreDataHotelServiceTests";
+			sourceTree = "<group>";
+		};
+		62B1A8DA21306B79400CB096E698524B /* Pods-CoreDataHotelService */ = {
+			isa = PBXGroup;
+			children = (
+				AC70EC13C9A3AF38C3E552E3FEE1A5F1 /* Pods-CoreDataHotelService-acknowledgements.markdown */,
+				901C9F9D1ACDC3B250A78AE0D7592E90 /* Pods-CoreDataHotelService-acknowledgements.plist */,
+				29899430E00E305BBDC02056209FFD21 /* Pods-CoreDataHotelService-dummy.m */,
+				096F0C8A2E79E816B4707F0D8E830920 /* Pods-CoreDataHotelService-frameworks.sh */,
+				FCEADC805DCBDB1B7420B975DF53AF20 /* Pods-CoreDataHotelService-resources.sh */,
+				1B0D9C3BF203B1CAF0EF83870B2CC7C4 /* Pods-CoreDataHotelService.debug.xcconfig */,
+				6382799A844B0240C15BE3142159EB75 /* Pods-CoreDataHotelService.release.xcconfig */,
+			);
+			name = "Pods-CoreDataHotelService";
+			path = "Target Support Files/Pods-CoreDataHotelService";
+			sourceTree = "<group>";
+		};
+		66FFE851E847A4C222244697C05150DD /* FlurrySDK */ = {
+			isa = PBXGroup;
+			children = (
+				CD9F540EB5CB8728AFB52D96E8C07285 /* Flurry.h */,
+				AEF3D4AE8F1B72A13718D865B7450CF2 /* FlurryEmpty.m */,
+				FF654D5A13773B9FF17F1B1D33D40B55 /* FlurrySessionBuilder.h */,
+				D85A462AAFF700B6466787207B86FF39 /* Frameworks */,
+			);
+			name = FlurrySDK;
+			sourceTree = "<group>";
+		};
+		67CA985B3CF631964B0A936C28CEE170 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF954C56312474A815E952C14EEE56 /* AVFoundation.framework */,
+				80ADFA6D89EE3A67094AE42C532B7C24 /* CoreGraphics.framework */,
+				63D41431FC13E2AB9FA89D7DD85905DD /* CoreMedia.framework */,
+				EA11F2351AE477D53E01428D1E8857ED /* Foundation.framework */,
+				A68619F58862E26B5DED9BC10FC97E2E /* MediaPlayer.framework */,
+				FABF0F60F894F10F0E95DD9612054C40 /* Security.framework */,
+				ACB3390AA3D0A13B8CD7B2379612C5FB /* StoreKit.framework */,
+				3567481EA8642F0E1DF90AA24903415C /* SystemConfiguration.framework */,
+				8B46741E8E8372B6C680BDA86A06826A /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6C7330B9A2F70AED336675B9079FC248 /* FlurryAds */ = {
+			isa = PBXGroup;
+			children = (
+				4591E14ECE3EF5C8917D7F414DE4CE1B /* FlurryAdBanner.h */,
+				323C1444EA07BACEA15B3E9C6DA8CA2D /* FlurryAdBannerDelegate.h */,
+				A6982A28779F389A9C9F9F1E47DED247 /* FlurryAdDelegate.h */,
+				37812C315C418AD4F13FF2590D7239B1 /* FlurryAdError.h */,
+				6842F92A96AC82C7E50F7E4B68963D99 /* FlurryAdInterstitial.h */,
+				412526003B65B1D430BEFB97E4EDBD01 /* FlurryAdInterstitialDelegate.h */,
+				D26D5D09A8F749E0ACB519A516033F67 /* FlurryAdNative.h */,
+				8AE096C76B124A6D131AF51C6CBAB59F /* FlurryAdNativeAsset.h */,
+				70DE362E41AA045F7B4996FD89752557 /* FlurryAdNativeDelegate.h */,
+				98C9445C2558DB8215C7919E725E96E9 /* FlurryAdNativeStyle.h */,
+				268FDBE73FDF9BB7C7AED8C7D1F11108 /* FlurryAds.h */,
+				FEE9401B7E8B35CFD67241FD7B57A266 /* FlurryAdsEmpty.m */,
+				E86EE24E3F248C58C64B6875FD974F1D /* FlurryAdTargeting.h */,
+				D744F0266A3CB0633C05FE94845F208D /* Frameworks */,
+			);
+			name = FlurryAds;
+			sourceTree = "<group>";
+		};
+		76F3A59716770EBF5A6513ADFE66FEAC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7877A02C5ED6E802406393EC09E4A617 /* Flurry-iOS-SDK.xcconfig */,
+				A4F5713B35FCAEA34CA539D6AA96B657 /* Flurry-iOS-SDK-dummy.m */,
+				7770D7EFC667F56D2E9C08BAB2C252B2 /* Flurry-iOS-SDK-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Flurry-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				24002A6670E6882ECD6250D3E60F9CB2 /* Frameworks */,
+				ACDDE0CADA4CA088A63F07511D9341F2 /* Pods */,
+				FBBE733A5526B4019A972F4A08F4ED74 /* Products */,
+				4E2E631BF719C06B5520D3BCCE2A3831 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9DCDBFBB3CD31CCBA558B0E5EBB0D639 /* Pods-CoreDataHotelServiceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				68B8D6373084E4BB19694861671C672A /* Pods-CoreDataHotelServiceUITests-acknowledgements.markdown */,
+				323A1A0615C5BB50859F4EB0308352E5 /* Pods-CoreDataHotelServiceUITests-acknowledgements.plist */,
+				CB296F1132336D9EAC32A0EA77D222A5 /* Pods-CoreDataHotelServiceUITests-dummy.m */,
+				B7D9371739F601C506DAF4B3133346FB /* Pods-CoreDataHotelServiceUITests-frameworks.sh */,
+				30EB294AA09483DD19113902F0798EB5 /* Pods-CoreDataHotelServiceUITests-resources.sh */,
+				38BF4802F6EF7DE29884840879924A36 /* Pods-CoreDataHotelServiceUITests.debug.xcconfig */,
+				58ECCCBCF5FCE9DDF3C859797CB610B0 /* Pods-CoreDataHotelServiceUITests.release.xcconfig */,
+			);
+			name = "Pods-CoreDataHotelServiceUITests";
+			path = "Target Support Files/Pods-CoreDataHotelServiceUITests";
+			sourceTree = "<group>";
+		};
+		ACDDE0CADA4CA088A63F07511D9341F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD1F9EEB6167FB771801E8503DFC65FA /* Flurry-iOS-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D744F0266A3CB0633C05FE94845F208D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A05CA7482CF67A96128AE99E7C53E59 /* libFlurryAds_7.8.2.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D85A462AAFF700B6466787207B86FF39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DAF215A041DA41F51C4B967CCA91C02 /* libFlurry_7.8.2.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD1F9EEB6167FB771801E8503DFC65FA /* Flurry-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				6C7330B9A2F70AED336675B9079FC248 /* FlurryAds */,
+				66FFE851E847A4C222244697C05150DD /* FlurrySDK */,
+				76F3A59716770EBF5A6513ADFE66FEAC /* Support Files */,
+			);
+			name = "Flurry-iOS-SDK";
+			path = "Flurry-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		FBBE733A5526B4019A972F4A08F4ED74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF1ED937F99A96B5D6B8AF652AE65A30 /* libFlurry-iOS-SDK.a */,
+				03EF40D5DFC3421DD55F76BEB3355ECF /* libPods-CoreDataHotelService.a */,
+				698C8E8A41883187379EF41CA73E8F54 /* libPods-CoreDataHotelServiceTests.a */,
+				9CB5730B7DB30A65F8B76CBC1ECEDA6A /* libPods-CoreDataHotelServiceUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		602A6144702174560E8E57E58E34309F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8066639A3C6241FB42F3ACCE79AA8CAF /* Flurry.h in Headers */,
+				DDC7E9C264E2BBDC64C615F4A9D7CDCA /* FlurryAdBanner.h in Headers */,
+				B70682A32AE04D240D7695939C268F90 /* FlurryAdBannerDelegate.h in Headers */,
+				A753E39C9CD01EBFB3DD3ECF2846D0C5 /* FlurryAdDelegate.h in Headers */,
+				13DA7286351E486BA0E45E6BFBD32834 /* FlurryAdError.h in Headers */,
+				3DC01EA99B0CCF88423014C50134D310 /* FlurryAdInterstitial.h in Headers */,
+				BDB442213CAABB27C46AD33C077797EC /* FlurryAdInterstitialDelegate.h in Headers */,
+				D6FF7A992960E45153B13470E82A862A /* FlurryAdNative.h in Headers */,
+				86856288B101FE49E10EE42D4C4882FC /* FlurryAdNativeAsset.h in Headers */,
+				CFC29E16137632F684B8780CC611A942 /* FlurryAdNativeDelegate.h in Headers */,
+				1E7A558162C5BE544674C2C071B4CC64 /* FlurryAdNativeStyle.h in Headers */,
+				544EA09083C5C3807A6547985CB06128 /* FlurryAds.h in Headers */,
+				847A23D5BB73444A1A96F4107A4E0B48 /* FlurryAdTargeting.h in Headers */,
+				29BD8106FA3AFCAB5A991C2D332A41A8 /* FlurrySessionBuilder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7E70BB3D46EE3458EA55A87FEF7C2886 /* Pods-CoreDataHotelServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 248B7897A6E0BA053CF324C0E4085472 /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelServiceTests" */;
+			buildPhases = (
+				2647BEB4DD4542161372A3A68A884C4A /* Sources */,
+				1ED8B2FECBA6F8B8CDB46579AD901699 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CoreDataHotelServiceTests";
+			productName = "Pods-CoreDataHotelServiceTests";
+			productReference = 698C8E8A41883187379EF41CA73E8F54 /* libPods-CoreDataHotelServiceTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DF1E524B017260D4E9807A9F040DF141 /* Pods-CoreDataHotelService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BE30A9EF6A79CD17C243040449D0B86 /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelService" */;
+			buildPhases = (
+				CF6FE6DB4B846C8FEB28FA13431040C3 /* Sources */,
+				ED6F997FEDCD4005E182F4D3943C4068 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E7D3A1289ACA23A17F0FB7D654ED435 /* PBXTargetDependency */,
+			);
+			name = "Pods-CoreDataHotelService";
+			productName = "Pods-CoreDataHotelService";
+			productReference = 03EF40D5DFC3421DD55F76BEB3355ECF /* libPods-CoreDataHotelService.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F8AE938CFB44C03989B272A0E7CC172C /* Flurry-iOS-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC43AB98DB44CBF4783134D457A634F1 /* Build configuration list for PBXNativeTarget "Flurry-iOS-SDK" */;
+			buildPhases = (
+				5DEA507DB1707F24A5C836AE7277A912 /* Sources */,
+				D9FE4FCEADB46671E010BBDAC2FEA281 /* Frameworks */,
+				602A6144702174560E8E57E58E34309F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Flurry-iOS-SDK";
+			productName = "Flurry-iOS-SDK";
+			productReference = EF1ED937F99A96B5D6B8AF652AE65A30 /* libFlurry-iOS-SDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FE6C90E2366A8D47177183296117C1F4 /* Pods-CoreDataHotelServiceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99EB72CDA5F38FC1C451C0971B18856D /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelServiceUITests" */;
+			buildPhases = (
+				3C2147E8B7FE7CA4ED7810863380A0F4 /* Sources */,
+				7A530A7C983A72AC25044563C1678331 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CoreDataHotelServiceUITests";
+			productName = "Pods-CoreDataHotelServiceUITests";
+			productReference = 9CB5730B7DB30A65F8B76CBC1ECEDA6A /* libPods-CoreDataHotelServiceUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = FBBE733A5526B4019A972F4A08F4ED74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8AE938CFB44C03989B272A0E7CC172C /* Flurry-iOS-SDK */,
+				DF1E524B017260D4E9807A9F040DF141 /* Pods-CoreDataHotelService */,
+				7E70BB3D46EE3458EA55A87FEF7C2886 /* Pods-CoreDataHotelServiceTests */,
+				FE6C90E2366A8D47177183296117C1F4 /* Pods-CoreDataHotelServiceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2647BEB4DD4542161372A3A68A884C4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4607236168582B1055F84AFFA7308F8D /* Pods-CoreDataHotelServiceTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C2147E8B7FE7CA4ED7810863380A0F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D679B354CF6C263415D154A17F7B6236 /* Pods-CoreDataHotelServiceUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DEA507DB1707F24A5C836AE7277A912 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5045FC9D28BD0983DF8B98415624645B /* Flurry-iOS-SDK-dummy.m in Sources */,
+				99B13349C17C127B97313AE0225A6ADA /* FlurryAdsEmpty.m in Sources */,
+				7389F43408DA6A1968CA65EA7C12D200 /* FlurryEmpty.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF6FE6DB4B846C8FEB28FA13431040C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				992F234F2671B6E904F741585DB56552 /* Pods-CoreDataHotelService-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E7D3A1289ACA23A17F0FB7D654ED435 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Flurry-iOS-SDK";
+			target = F8AE938CFB44C03989B272A0E7CC172C /* Flurry-iOS-SDK */;
+			targetProxy = 4FDED13C24FE437C85B471C4FF257D5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		357D18C263684E0D03ECBFCEE2522003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7877A02C5ED6E802406393EC09E4A617 /* Flurry-iOS-SDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Flurry-iOS-SDK/Flurry-iOS-SDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5987632D07187F6D2DFF57B74E3C4266 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42BFA3F5880EDBD2A3177134B401FABE /* Pods-CoreDataHotelServiceTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		79F36BDEC9C530B7FF4A707884499D30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6382799A844B0240C15BE3142159EB75 /* Pods-CoreDataHotelService.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		87576B9AA8C7F6A7EB67C4D26BFD30B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7877A02C5ED6E802406393EC09E4A617 /* Flurry-iOS-SDK.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Flurry-iOS-SDK/Flurry-iOS-SDK-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		893D43A6480F2078EB2CA5E83C45EE8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58ECCCBCF5FCE9DDF3C859797CB610B0 /* Pods-CoreDataHotelServiceUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8BDC628B458204A178652ADDEEECFBF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 026E8A8459446A11537D6BC634418200 /* Pods-CoreDataHotelServiceTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B54EE1B757ED6E6748F88DD96D035BE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B0D9C3BF203B1CAF0EF83870B2CC7C4 /* Pods-CoreDataHotelService.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BE071E89695135FD97BE0EF974837C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38BF4802F6EF7DE29884840879924A36 /* Pods-CoreDataHotelServiceUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ED4FC68AB2A4E06C718CFF338F6F156B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0BE30A9EF6A79CD17C243040449D0B86 /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54EE1B757ED6E6748F88DD96D035BE5 /* Debug */,
+				79F36BDEC9C530B7FF4A707884499D30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		248B7897A6E0BA053CF324C0E4085472 /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BDC628B458204A178652ADDEEECFBF7 /* Debug */,
+				5987632D07187F6D2DFF57B74E3C4266 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACE7C8415F53E79F07C6BBE57F0F61D /* Debug */,
+				ED4FC68AB2A4E06C718CFF338F6F156B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99EB72CDA5F38FC1C451C0971B18856D /* Build configuration list for PBXNativeTarget "Pods-CoreDataHotelServiceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE071E89695135FD97BE0EF974837C28 /* Debug */,
+				893D43A6480F2078EB2CA5E83C45EE8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC43AB98DB44CBF4783134D457A634F1 /* Build configuration list for PBXNativeTarget "Flurry-iOS-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87576B9AA8C7F6A7EB67C4D26BFD30B9 /* Debug */,
+				357D18C263684E0D03ECBFCEE2522003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
