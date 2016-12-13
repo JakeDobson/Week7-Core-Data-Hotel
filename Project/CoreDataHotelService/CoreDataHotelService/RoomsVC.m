@@ -32,6 +32,7 @@
     self.roomsTableView.delegate = self;
     self.roomsTableView.translatesAutoresizingMaskIntoConstraints = NO;
     
+    
     self.dataSource = self.hotel.rooms.allObjects;
     
     [self.view addSubview:self.roomsTableView];

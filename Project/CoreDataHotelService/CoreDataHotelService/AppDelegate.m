@@ -54,11 +54,16 @@
 -(void)bootstrapApp{
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
     
-    NSError *error;
+    NSString *domain = @"CustomDomain";
+    NSInteger code = 403;
+    NSDictionary *errorDict = @{@"Description" : @"Something's up!",
+                                @"JSON"        : @"Error with JSON"};
+    
+    NSError *error = [NSError errorWithDomain:domain code:code userInfo:[errorDict valueForKey:@"Description"]];
     NSInteger count = [self.persistentContainer.viewContext countForFetchRequest:request error:&error];
     
     if(error){
-        NSLog(@"Error Getting count of Hotels from Core Data.");
+        NSLog(@"%@", error);
         return;
     }
     
@@ -69,17 +74,17 @@
         NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
         NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
         
-        NSError *jsonError;
+        NSError *jsonError = [NSError errorWithDomain:domain code:code userInfo:[errorDict valueForKey:@"JSON"]];
         NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&jsonError];
         
         if(jsonError){
-            NSLog(@"Error Serializing JSON");
+            NSLog(@"%@", jsonError);
             return;
         }
         
         hotels = rootObject[@"Hotels"];
         
-        for(NSDictionary *hotel in hotels){
+        for (NSDictionary *hotel in hotels) {
             
             Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.persistentContainer.viewContext];
             

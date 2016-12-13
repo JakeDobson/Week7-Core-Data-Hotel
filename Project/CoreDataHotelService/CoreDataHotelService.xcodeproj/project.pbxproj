@@ -16,6 +16,7 @@
 		7C1C4BF51DEC9D8800C2D66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C4BF41DEC9D8800C2D66C /* Assets.xcassets */; };
 		7C1C4BF81DEC9D8800C2D66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C4BF61DEC9D8800C2D66C /* LaunchScreen.storyboard */; };
 		7C1C4C211DECA33200C2D66C /* AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C4C201DECA33200C2D66C /* AutoLayout.m */; };
+		7C353F7D1E00AA2000217D0D /* MyCustomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C353F7C1E00AA2000217D0D /* MyCustomTests.m */; };
 		7C3919691DEF88F600069519 /* LookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C3919681DEF88F600069519 /* LookupVC.m */; };
 		7C519DB61DEDC94F00E6222E /* RoomsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB51DEDC94F00E6222E /* RoomsVC.m */; };
 		7C519DB91DEDF73600E6222E /* DatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C519DB81DEDF73600E6222E /* DatePickerVC.m */; };
@@ -69,6 +70,7 @@
 		7C1C4C091DEC9D8900C2D66C /* CoreDataHotelServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataHotelServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1C4C1F1DECA33200C2D66C /* AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoLayout.h; sourceTree = "<group>"; };
 		7C1C4C201DECA33200C2D66C /* AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoLayout.m; sourceTree = "<group>"; };
+		7C353F7C1E00AA2000217D0D /* MyCustomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomTests.m; sourceTree = "<group>"; };
 		7C3919671DEF88F600069519 /* LookupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookupVC.h; sourceTree = "<group>"; };
 		7C3919681DEF88F600069519 /* LookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookupVC.m; sourceTree = "<group>"; };
 		7C519DB41DEDC94F00E6222E /* RoomsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsVC.h; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				7C7B10FB1DEF54AE001B58E5 /* AutoLayoutTest.m */,
+				7C353F7C1E00AA2000217D0D /* MyCustomTests.m */,
 				7C7B10FD1DEF54AE001B58E5 /* Info.plist */,
 			);
 			path = CoreDataHotelServiceTests;
@@ -633,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C353F7D1E00AA2000217D0D /* MyCustomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,12 +43,15 @@
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
         request.predicate = [NSPredicate predicateWithFormat:@"startDate <= %@ && endDate >= %@", self.startDate, [NSDate date]];
+        NSString *requestDomain = @"request";
+        NSInteger requestErrorCode = 303;
+        NSDictionary *requestDict = @{@"requested" : @"Error with fetch request"};
+        NSError *requestError = [NSError errorWithDomain:requestDomain code:requestErrorCode userInfo:requestDict];
         
-        NSError *requestError;
         NSArray *results = [context executeFetchRequest:request error:&requestError];
         
         if (requestError) {
-            NSLog(@"There was an issue with our reservation fetch.");
+            NSLog(@"%@", requestError);
             return nil;
         }
         NSMutableArray *unavailableRooms = [[NSMutableArray alloc]init];

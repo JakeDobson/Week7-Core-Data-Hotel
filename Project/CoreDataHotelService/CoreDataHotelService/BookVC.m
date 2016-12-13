@@ -151,11 +151,15 @@
     reservation.guest.lastName = self.lastNameField.text;
     reservation.guest.email = self.emailField.text;
     
-    NSError *saveError;
+    NSString *saveDomain = @"save domain";
+    NSInteger saveErrorCode = 402;
+    NSDictionary *saveErrorDict = @{@"Save" : @"Error: Did not save!"};
+    
+    NSError *saveError = [NSError errorWithDomain:saveDomain code:saveErrorCode userInfo:[saveErrorDict valueForKey:@"Save"]];
     [context save:&saveError];
     
     if (saveError) {
-        NSLog(@"There was an error saving new reservation");
+        NSLog(@"%@", saveError);
     } else {
         NSLog(@"Saved Reservation Successfully!");
         

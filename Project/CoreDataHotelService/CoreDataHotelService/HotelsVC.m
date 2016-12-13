@@ -53,13 +53,17 @@
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
         
-        NSError *fetchError;
+        NSString *fetchDomain = @"FetchDomain";
+        NSInteger fetchCode = 301;
+        NSDictionary *fetchErrorDict = @{@"Fetch" : @"Error fetching hotels from Core Data!"};
+        
+        NSError *fetchError = [NSError errorWithDomain:fetchDomain code:fetchCode userInfo:[fetchErrorDict valueForKey:@"Fetch"]];
         
         _dataSource = [context executeFetchRequest:request
                                              error:&fetchError];
         
         if (fetchError) {
-            NSLog(@"Error Fetching Hotels from Core Data");
+            NSLog(@"%@", fetchError);
         }
     }
     return _dataSource;
