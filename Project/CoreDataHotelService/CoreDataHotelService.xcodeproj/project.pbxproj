@@ -26,6 +26,7 @@
 		7CA68D031DECD9F8004A3FA2 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CA68D021DECD9F8004A3FA2 /* hotels.json */; };
 		7CA68D061DECEF21004A3FA2 /* HotelsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA68D051DECEF21004A3FA2 /* HotelsVC.m */; };
 		7CC42B911DF0A28600C7F75D /* MappingModel1.0-1.1.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7CC42B901DF0A28600C7F75D /* MappingModel1.0-1.1.xcmappingmodel */; };
+		7CE82C191E02F3F70093EB23 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE82C181E02F3F70093EB23 /* Bridge.swift */; };
 		E294E6CFC853F4C71B09114D /* libPods-CoreDataHotelServiceUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8618EC8DC860F9275A098740 /* libPods-CoreDataHotelServiceUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,8 @@
 		7CAE9A751DF0D71A00A9C873 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		7CC42B8F1DF0A11800C7F75D /* CoreDataHotelService1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataHotelService1.1.xcdatamodel; sourceTree = "<group>"; };
 		7CC42B901DF0A28600C7F75D /* MappingModel1.0-1.1.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "MappingModel1.0-1.1.xcmappingmodel"; sourceTree = "<group>"; };
+		7CE82C171E02F3F60093EB23 /* CoreDataHotelService-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataHotelService-Bridging-Header.h"; sourceTree = "<group>"; };
+		7CE82C181E02F3F70093EB23 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
 		8618EC8DC860F9275A098740 /* libPods-CoreDataHotelServiceUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataHotelServiceUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF2371113EE1B50E7D97F8 /* Pods-CoreDataHotelServiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataHotelServiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataHotelServiceTests/Pods-CoreDataHotelServiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		99A159D90F65BB2E79FB363C /* libPods-CoreDataHotelServiceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataHotelServiceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +245,9 @@
 		7C1C4C1E1DECA30000C2D66C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7CE82C181E02F3F70093EB23 /* Bridge.swift */,
 				7CAE9A751DF0D71A00A9C873 /* Constants.h */,
+				7CE82C171E02F3F60093EB23 /* CoreDataHotelService-Bridging-Header.h */,
 				7CC42B921DF0A2B100C7F75D /* MOM */,
 				7C1C4BF41DEC9D8800C2D66C /* Assets.xcassets */,
 				7CA68D021DECD9F8004A3FA2 /* hotels.json */,
@@ -397,6 +402,7 @@
 					7C1C4BE11DEC9D8800C2D66C = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = R3W67YCVBM;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					7C1C4BFD1DEC9D8900C2D66C = {
@@ -625,6 +631,7 @@
 				7C1C4BE71DEC9D8800C2D66C /* main.m in Sources */,
 				7CA68D061DECEF21004A3FA2 /* HotelsVC.m in Sources */,
 				7C1C4BF31DEC9D8800C2D66C /* CoreDataHotelService.xcdatamodeld in Sources */,
+				7CE82C191E02F3F70093EB23 /* Bridge.swift in Sources */,
 				7C519DB91DEDF73600E6222E /* DatePickerVC.m in Sources */,
 				7CC42B911DF0A28600C7F75D /* MappingModel1.0-1.1.xcmappingmodel in Sources */,
 				7C519DBC1DEE114300E6222E /* AvailabilityVC.m in Sources */,
@@ -774,6 +781,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -784,11 +792,17 @@
 			baseConfigurationReference = FC1656CF150B2C12C34CB225 /* Pods-CoreDataHotelService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JacobDobson.CoreDataHotelService;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoreDataHotelService/CoreDataHotelService-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -797,11 +811,16 @@
 			baseConfigurationReference = C298554DA06A0DF7D18CFD6A /* Pods-CoreDataHotelService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelService/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JacobDobson.CoreDataHotelService;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoreDataHotelService/CoreDataHotelService-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -809,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F72C5237563DE49763206402 /* Pods-CoreDataHotelServiceTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelServiceTests/Info.plist;
@@ -823,6 +843,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94EF2371113EE1B50E7D97F8 /* Pods-CoreDataHotelServiceTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelServiceTests/Info.plist;
@@ -837,6 +858,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B38178E6432F366FCEE8CEC4 /* Pods-CoreDataHotelServiceUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelServiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -850,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0902AE40732E84CFC2B0CC12 /* Pods-CoreDataHotelServiceUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = CoreDataHotelServiceUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -862,6 +885,7 @@
 		7C7B11001DEF54AE001B58E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = AutoLayoutTest/Info.plist;
@@ -875,6 +899,7 @@
 		7C7B11011DEF54AE001B58E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R3W67YCVBM;
 				INFOPLIST_FILE = AutoLayoutTest/Info.plist;

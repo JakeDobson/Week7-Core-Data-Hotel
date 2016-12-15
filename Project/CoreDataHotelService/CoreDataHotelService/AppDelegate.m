@@ -16,6 +16,9 @@
 #import "Hotel+CoreDataClass.h"
 #import "Room+CoreDataClass.h"
 
+#import "CoreDataHotelService-swift.h"
+#import "CoreDataHotelService-Bridging-Header.h"
+
 @interface AppDelegate ()
 
 @property(strong, nonatomic) UINavigationController *navigationController;
@@ -27,6 +30,8 @@
 
 
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [self walk];
     
     [Flurry startSession:kAPIKey];
     
